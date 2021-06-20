@@ -6,7 +6,7 @@ Logic Grid is a website for those who love logic puzzles, but wants a site that 
 
 This is the rails API that provides the games, solutions, and highscores for the game using a PostgreSQL databse. Please use in conjunction with Logic Grid: Frontend or create your own.
 
-### [View the Demo](...)
+### [View the Demo](https://youtu.be/OohM3gDU7gM)
 <br>
 
 ![ScreenShot](app/assets/images/screenshot.png)
