@@ -3,7 +3,12 @@ class HighscoresController < ApplicationController
 
   # GET /highscores
   def index
-    @highscores = Highscore.all
+    if params[:game_id]
+      @game = Game.find_by_id(params[:game_id])
+      @highscores = @game.highscores
+    else
+      @highscores = Highscore.all
+    end
 
     render json: @highscores
   end
@@ -46,6 +51,6 @@ class HighscoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def highscore_params
-      params.require(:highscore).permit(:name, :score)
+      params.require(:highscore).permit(:name, :score, :game_id)
     end
 end
