@@ -5,9 +5,9 @@ class HighscoresController < ApplicationController
   def index
     if params[:game_id]
       @game = Game.find_by_id(params[:game_id])
-      @highscores = @game.highscores
+      @highscores = @game.highscores.sort_by{|highscore| -highscore[:score] }
     else
-      @highscores = Highscore.all
+      @highscores = Highscore.all.sort_by{|highscore| -highscore[:score] }
     end
 
     render json: @highscores
